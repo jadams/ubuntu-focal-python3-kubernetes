@@ -20,7 +20,7 @@ jobs:
         sudo apt-get -y install python3-all debhelper dh-make dh-python apt-file
     - name: Install stdeb
       run: |
-        cd /tmp
+        pwd
         STDEB_VERSION="0.10.0"
         wget https://files.pythonhosted.org/packages/13/7e/bd2cfda795d84e4445305cd53c4be4a3ec6fad2546ad2a2b79cc7906b6d7/stdeb-$STDEB_VERSION.tar.gz
         tar xzf stdeb-$STDEB_VERSION.tar.gz
@@ -30,6 +30,7 @@ jobs:
         sudo apt-get install -f
     - name: Get and Build python3-kubernetes 12.0.1
       run: |
+        pwd
         PYKUBE_VERSION="12.0.1"
         wget https://files.pythonhosted.org/packages/a1/56/fd57e391f60dc143402e45560ca87df1d74ddade5ac9b7e9f2cc0338171e/kubernetes-$PYKUBE_VERSION.tar.gz
         tar xzvf kubernetes-$PYKUBE_VERSION.tar.gz
